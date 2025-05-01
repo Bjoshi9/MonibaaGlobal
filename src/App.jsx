@@ -16,7 +16,7 @@ const App = () => {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow mt-20">
+        <main className="flex-grow mb-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -25,8 +25,8 @@ const App = () => {
             <Route path="/why-us" element={<WhyChooseUs />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        </main>
-        <Footer />
+          </main>
+        <Footer/>
       </div>
     </Router>
   );

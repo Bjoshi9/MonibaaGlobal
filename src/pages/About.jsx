@@ -1,9 +1,9 @@
 // src/pages/About.jsx
 function About() {
   return (
-    <div className="pt-20">
+    <div className=" bg-[#1a2942] pt-20">
       {/* Hero Section */}
-      <div className="bg-[#1a2942] text-white py-20">
+      <div className="text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">About Monibaa Global Inc.</h1>
           <p className="text-xl text-center max-w-3xl mx-auto">

@@ -21,7 +21,8 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-2xl font-bold text-gray-800">
-            Monibaa Global
+            <span className="text-2xl font-bold text-[#1a2942]">Monibaa</span>
+            <span className="text-[#ff6b2b] ml-1 text-2xl font-light">Global</span>
           </Link>
 
           <div className="hidden md:flex space-x-8">
