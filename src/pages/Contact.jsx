@@ -23,9 +23,9 @@ function Contact() {
   };
 
   return (
-    <div className="pt-20">
+    <div className="bg-[#1a2942] pt-20">
       {/* Hero Section */}
-      <div className="bg-[#1a2942] text-white py-20">
+      <div className="text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">Contact Us</h1>
           <p className="text-xl text-center max-w-3xl mx-auto">
@@ -35,7 +35,7 @@ function Contact() {
       </div>
 
       {/* Contact Form & Map Section */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}

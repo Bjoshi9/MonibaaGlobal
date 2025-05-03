@@ -20,12 +20,10 @@ const ProductCard = ({ title, description, className = '', isListItem = false })
 
 const CategoryListing = () => (
   <>
-    <div className="bg-[#1a2942] pt-20">
-      <div className="py-16 mb-12">
+    <div className=" bg-[#1a2942] pt-20">
+      <div className="text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-white px-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] tracking-wide">
-            Our Products
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">Our Products</h1>
         </div>
       </div>
     </div>
@@ -51,16 +49,16 @@ const CategoryListing = () => (
 
 const ProductDetails = ({ category, productCategory }) => (
   <>
-    <div className="bg-[#1a2942] py-16 mb-12">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-white px-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] tracking-wide">
-          {category}
-        </h1>
-        {productCategory.description && (
-          <p className="text-center text-white mt-4 max-w-2xl mx-auto opacity-90">
-            {productCategory.description}
-          </p>
-        )}
+    <div className=" bg-[#1a2942] pt-20">
+      <div className="text-white py-20">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">{category}</h1>
+          {productCategory.description && (
+            <p className="text-xl text-center max-w-3xl mx-auto">
+                {productCategory.description}
+            </p>
+          )}
+        </div>
       </div>
     </div>
 
