@@ -2,7 +2,6 @@
 export const productsData = {
   "Transformer Materials & Laminations": {
     description: "High-quality electrical steel products for transformer manufacturing",
-    image: "/assets/images/transformer-components.png",
     subProducts: [
       {
         name: "EI, UI, and TL Laminations",
@@ -44,7 +43,6 @@ export const productsData = {
   },
   "Customized Engineered Motors": {
     description: "Specialized motor solutions for various applications",
-    image: "/assets/images/transformer-components.png",
     subProducts: [
       {
         name: "Customized Electrical Motors",
@@ -70,7 +68,6 @@ export const productsData = {
   },
   "Electric Motor Parts & Components": {
     description: "Comprehensive range of motor components and assemblies",
-    image: "/assets/images/transformer-components.png",
     subProducts: [
       {
         name: "Stamping",

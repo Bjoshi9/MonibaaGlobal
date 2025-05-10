@@ -1,5 +1,6 @@
 // src/pages/Contact.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { COMPANY_INFO } from '../utils/constants';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ function Contact() {
     subject: '',
     message: '',
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +23,14 @@ function Contact() {
       [e.target.name]: e.target.value,
     });
   };
+
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => setSubmitted(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitted]);
+  
 
   return (
     <div className="bg-[#1a2942] pt-20">
@@ -41,15 +51,23 @@ function Contact() {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl font-bold text-[#1a2942] mb-8">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                action="https://formsubmit.co/info@monibaaglobal.com"
+                method="POST"
+                className="space-y-6"
+                onSubmit={() => setSubmitted(true)}
+              >
+                {/* Hidden inputs for options */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value="https://monibaaglobal.com/contact" />
+
                 <div>
                   <label htmlFor="name" className="block text-[#445566] mb-2">Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff6b2b]"
                   />
@@ -60,8 +78,6 @@ function Contact() {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff6b2b]"
                   />
@@ -72,8 +88,6 @@ function Contact() {
                     type="text"
                     id="subject"
                     name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff6b2b]"
                   />
@@ -83,8 +97,6 @@ function Contact() {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
                     rows="5"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff6b2b]"
@@ -97,6 +109,11 @@ function Contact() {
                   Send Message
                 </button>
               </form>
+              {submitted && (
+                <div className="mt-4 p-4 bg-green-100 text-green-800 border border-green-300 rounded">
+                  ✅ Your message has been sent successfully!
+                </div>
+              )}
             </div>
 
             {/* Map and Contact Info */}
@@ -117,16 +134,22 @@ function Contact() {
               <div className="space-y-4 text-[#445566]">
                 <p>
                   <strong className="text-[#1a2942]">Address:</strong><br />
-                  Office #305, 10 Milner Business Ct #300<br />
-                  Scarborough, ON, M1B 3C6
+                  {COMPANY_INFO.address}
                 </p>
                 <p>
                   <strong className="text-[#1a2942]">Phone:</strong><br />
-                  +1 (123) 456-7890
+                  {COMPANY_INFO.phone.map((phone, index) => (
+                    <span key={index}>
+                      <a href={`tel:${phone}`}>
+                        {phone}
+                      </a>
+                      {index < COMPANY_INFO.phone.length - 1 && <br />}
+                    </span>
+                  ))}
                 </p>
                 <p>
                   <strong className="text-[#1a2942]">Email:</strong><br />
-                  info@monibaa.com
+                  <a href='mailto:info@monibaaglobal.com'>{COMPANY_INFO.email}</a>
                 </p>
               </div>
             </div>

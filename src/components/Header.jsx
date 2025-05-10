@@ -5,10 +5,12 @@ import { productsData } from '../utils/ProductsData';
 
 const Header = () => {
   const [isProductsMenuOpen, setIsProductsMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const closeMenu = () => {
     setIsProductsMenuOpen(false);
+    setIsMobileMenuOpen(false);
   };
 
   const handleProductsClick = () => {
@@ -70,7 +72,10 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <button className="md:hidden">
+          <button 
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
             <svg
               className="h-6 w-6"
               fill="none"
@@ -84,6 +89,29 @@ const Header = () => {
             </svg>
           </button>
         </div>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
+            <div className="flex flex-col space-y-4 mt-4">
+              <Link to="/" className="text-gray-600 hover:text-gray-900" onClick={closeMenu}>
+                Home
+              </Link>
+              <Link to="/about" className="text-gray-600 hover:text-gray-900" onClick={closeMenu}>
+                About Us
+              </Link>
+              <Link to="/products" className="text-gray-600 hover:text-gray-900" onClick={closeMenu}>
+                Products
+              </Link>
+              <Link to="/why-us" className="text-gray-600 hover:text-gray-900" onClick={closeMenu}>
+                Why Us
+              </Link>
+              <Link to="/contact" className="text-gray-600 hover:text-gray-900" onClick={closeMenu}>
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

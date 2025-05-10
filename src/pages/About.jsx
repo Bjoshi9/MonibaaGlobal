@@ -18,13 +18,13 @@ function About() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-[#1a2942] mb-8">Our Story</h2>
             <p className="text-lg text-[#445566] mb-6">
-              Founded in 2024, Monibaa Global Inc. represents the North American extension of Sriram Industries, 
+              Founded in 2024, Monibaa Global Inc. represents the North American extension of Shreeram Industries, 
               a distinguished leader in motor stamping and transformer materials since 1996. Our establishment 
               in Canada marks a significant milestone in bringing world-class manufacturing capabilities to 
               the North American market.
             </p>
             <p className="text-lg text-[#445566] mb-6">
-              Building on Sriram Industries' 28+ years of manufacturing excellence, we combine deep industry 
+              Building on Shreeram Industries' 28+ years of manufacturing excellence, we combine deep industry 
               expertise with local market understanding to deliver exceptional value to our clients.
             </p>
           </div>
@@ -38,10 +38,7 @@ function About() {
             <h2 className="text-3xl font-bold text-[#1a2942] mb-8">Leadership</h2>
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/3">
-                  <div className="aspect-square bg-gray-200 rounded-lg"></div>
-                </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/3">
                   <h3 className="text-2xl font-bold text-[#1a2942] mb-4">Bantu Patel</h3>
                   <p className="text-[#445566] mb-4">Founder & CEO</p>
                   <p className="text-[#445566]">

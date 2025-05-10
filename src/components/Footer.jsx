@@ -11,8 +11,21 @@ function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Monibaa Global Inc.</h3>
             <p className="text-gray-300 mb-2">{COMPANY_INFO.address}</p>
-            <p className="text-gray-300 mb-2">Phone: {COMPANY_INFO.phone}</p>
-            <p className="text-gray-300">Email: {COMPANY_INFO.email}</p>
+            <p className="text-gray-300 mb-2">Phone:&nbsp;
+              {COMPANY_INFO.phone.map((phone, index) => (
+                    <span key={index}>
+                      <a href={`tel:${phone}`} className="text-gray-300 hover:text-white transition-colors">
+                      {index === 0 ? phone : <span>&emsp;&emsp;&emsp;&nbsp;&nbsp;{phone}</span>}
+                      {index < COMPANY_INFO.phone.length - 1 && <br />}
+                      </a>
+                    </span>
+                  ))}
+            </p>
+            <p className="text-gray-300">Email:&nbsp;
+              <a href={`mailto:${COMPANY_INFO.email}`} className="text-gray-300 hover:text-white transition-colors">
+                {COMPANY_INFO.email}
+              </a>
+            </p>
           </div>
 
           {/* Quick Links */}

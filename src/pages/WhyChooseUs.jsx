@@ -68,7 +68,7 @@ function WhyChooseUs() {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold text-[#1a2942] mb-4">Manufacturing Excellence</h3>
               <p className="text-[#445566]">
-                Backed by Sriram Industries' proven track record of manufacturing excellence 
+                Backed by Shreeram Industries' proven track record of manufacturing excellence 
                 and quality control processes.
               </p>
             </div>

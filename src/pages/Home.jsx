@@ -1,5 +1,5 @@
 // src/pages/Home.jsx
-import { COMPANY_INFO, SERVICES } from '../utils/constants';
+import { COMPANY_INFO, PRODUCTS } from '../utils/constants';
 
 function Home() {
   return (
@@ -14,7 +14,9 @@ function Home() {
           <p className="text-xl md:text-2xl text-white font-light max-w-3xl mx-auto font-inter">
             {COMPANY_INFO.tagline}
           </p>
-          <button className="mt-8 bg-[#ff6b2b] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 font-medium">
+          <button className="mt-8 bg-[#ff6b2b] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 font-medium" 
+            onClick={() => window.location.href = '/about'}
+          >
             Discover More
           </button>
         </div>
@@ -24,20 +26,15 @@ function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#1a2942] mb-16">
-            Our Services
+            Our Products
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SERVICES.map((service) => (
+            {PRODUCTS.map((service) => (
               <div
                 key={service.title}
                 className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                onClick={() => window.location.href = `/products/${encodeURIComponent(service.title)}`}
               >
-                <div className="text-[#ff6b2b] mb-4">
-                  {/* Icon placeholder */}
-                  <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12z" clipRule="evenodd" />
-                  </svg>
-                </div>
                 <h3 className="text-xl font-bold text-[#1a2942] mb-4">{service.title}</h3>
                 <p className="text-[#445566]">{service.description}</p>
               </div>
@@ -54,7 +51,7 @@ function Home() {
               Excellence Since 1996
             </h2>
             <p className="text-lg text-[#445566] mb-8">
-              As the North American extension of Sriram Industries, we bring {COMPANY_INFO.yearsFounded}+ years
+              As the North American extension of Shreeram Industries, we bring {COMPANY_INFO.yearsFounded}+ years
               of manufacturing excellence to Canada. Our commitment to quality and innovation
               drives us to deliver exceptional solutions for our clients.
             </p>
