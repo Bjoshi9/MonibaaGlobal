@@ -19,7 +19,7 @@ export const NAVIGATION = [
 export const COMPANY_INFO = {
   name: 'Monibaa Global Inc.',
   tagline: 'Connecting Indian Manufacturing Excellence with Canadian Industry',
-  address: 'Office #305, 10 Milner Business Ct #300, Scarborough, ON, M1B 3C6',
+  address: '',
   phone: ['+1 (437) 955-0442'],
   email: 'info@monibaaglobal.com',
   yearsFounded: 28,
