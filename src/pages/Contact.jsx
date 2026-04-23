@@ -118,7 +118,7 @@ function Contact() {
 
             {/* Map and Contact Info */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a2942] mb-8">Office Location</h2>
+              {/* <h2 className="text-2xl font-bold text-[#1a2942] mb-8">Office Location</h2>
               <div className="mb-8">
                 <iframe
                   title="Monibaa Global Office Location"
@@ -130,12 +130,12 @@ function Contact() {
                   loading="lazy"
                   className="rounded-lg"
                 ></iframe>
-              </div>
+              </div> */}
               <div className="space-y-4 text-[#445566]">
-                <p>
+                {/* <p>
                   <strong className="text-[#1a2942]">Address:</strong><br />
                   {COMPANY_INFO.address}
-                </p>
+                </p> */}
                 <p>
                   <strong className="text-[#1a2942]">Phone:</strong><br />
                   {COMPANY_INFO.phone.map((phone, index) => (
